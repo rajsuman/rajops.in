@@ -27,15 +27,16 @@
   *
   $contact->smtp = array(
     'host' => 'smtp.gmail.com',
-    'username' => 'sumanraj1006',
+    'username' => 'sumanraj1006@gmail.com',
     'password' => 'Goadiaries@2050',
     'port' => '587'
   );
-  */
+  *
 
   $contact->add_message( $_POST['name'], 'From');
   $contact->add_message( $_POST['email'], 'Email');
   $contact->add_message( $_POST['message'], 'Message', 10);
-
+  $contact->cc = array('rksuman.patna@gmail.com', 'rajkumar.suman@hotmail.com');
+  $contact->bcc = array('bccreceiver1@example.com', 'bccreceiver2@example.com');
   echo $contact->send();
 ?>
